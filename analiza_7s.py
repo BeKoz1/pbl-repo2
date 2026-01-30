@@ -5,7 +5,7 @@ import time
 from ultralytics import YOLO
 
 # --- KONFIGURACJA ---
-ESP_IP = "192.168.68.52"
+ESP_IP = "10.255.136.131"
 URL_STREAM = f"http://{ESP_IP}/"
 URL_ON = f"http://{ESP_IP}/control?power=on"
 URL_OFF = f"http://{ESP_IP}/control?power=off"

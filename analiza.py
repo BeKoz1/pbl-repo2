@@ -5,7 +5,7 @@ import time
 from ultralytics import YOLO
 
 # --- KONFIGURACJA ---
-ESP_IP = "192.168.68.52"
+ESP_IP = "10.255.136.131"
 URL_STREAM = f"http://{ESP_IP}/"
 URL_ON = f"http://{ESP_IP}/control?power=on"
 URL_OFF = f"http://{ESP_IP}/control?power=off"
@@ -55,7 +55,7 @@ while True:
                             if led_is_on:
                                 frames_without_animal += 1
                                 if frames_without_animal >= OFF_DELAY:
-                                    print(f"[{time.strftime('%H:%M:%S')}] CZYSTO: Wysyłam sygnał OFF")
+                                    #print(f"[{time.strftime('%H:%M:%S')}] CZYSTO: Wysyłam sygnał OFF")
                                     requests.get(URL_OFF, timeout=1)
                                     led_is_on = False
 
@@ -67,7 +67,7 @@ while True:
                             break
                     break # Przejdź do kolejnej klatki
     except Exception as e:
-        print(f"Błąd połączenia: {e}")
+        #print(f"Błąd połączenia: {e}")
         time.sleep(1)
 
 cv2.destroyAllWindows()
